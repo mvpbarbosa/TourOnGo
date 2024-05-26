@@ -1,11 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+func Sqrt(x float64) float64 {
+	z := 1.0
+
+	for i := 0; i < 10 ; i++ {
+		fmt.Println(x, "-", z)
+		z -= (z * z - x) / (2 * z)
+	}
+
+	return z
+}
 
 func main() {
-	sum := 1
-	for sum < 1000 {
-		sum += sum
-	}
-	fmt.Println(sum)
+	fmt.Println(Sqrt(225))
 }
